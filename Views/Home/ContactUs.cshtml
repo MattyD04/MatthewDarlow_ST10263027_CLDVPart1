@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="contact-container">
+    <div class="left-col">
+        <img class="logo" src="~/images/KhumaloCraftLogo.png" alt="Logo" />
+    </div>
+    <div class="right-col">
+        <h2>Contact us</h2>
+        <p>Planning to visit Indonesia soon? Get insider tips on where to go, things to do and find best deals for your next adventure.</p>
+
+        <form asp-action="ContactUs" method="post">
+            <div>
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea rows="6" id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .contact-container {
+        display: flex;
+        width: 100%;
+        background: #F8F8F8; /* Light Gray background color */
+    }
+
+    .left-col {
+        width: 50%;
+        height: 100vh;
+        background-image: url("~/images/KhumaloCraftLogo.png");
+        background-size: 150%; /* Increase the size of the background image */
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .logo {
+        width: 20rem; /* Increase the width of the logo image */
+        padding: 1.5rem;
+    }
+
+    .right-col {
+        background: #F8F8F8; /* Light Gray background color */
+        width: 50%;
+        padding: 5rem 3.5rem;
+    }
+
+    h2 {
+        color: #3F444C;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        font-weight: 300;
+    }
+
+    p {
+        color: #818386;
+        font-size: 0.9rem;
+        letter-spacing: 0.01rem;
+        margin: 0.25rem 0;
+    }
+
+    form div {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        color: #818386;
+        text-transform: uppercase;
+        font-size: 0.625rem;
+    }
+
+    input, textarea {
+        color: #010712;
+        font-weight: 500;
+        background: #FCFDFD;
+        border: 1px solid #818386;
+        padding: 0.5rem;
+        width: 100%;
+        outline: none;
+    }
+
+    button {
+        text-transform: uppercase;
+        font-weight: 300;
+        background: #3B3636;
+        color: #FCFDFD;
+        width: 10rem;
+        height: 2.25rem;
+        border: none;
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+    }
+</style>
