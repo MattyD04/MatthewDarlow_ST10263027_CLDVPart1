@@ -1,6 +1,59 @@
 ﻿@{
     ViewData["Title"] = "My Work";
 }
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    body {
+        background-color: #2f4f4f;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+    h1 {
+        color: #ffc107;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+        .image-container img {
+            width: 350px;
+            height: 350px;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+</style>
+
+<div class="image-container">
+    <div class="image-item">
+        <img src="~/images/Tshirt.jpg" alt="T-Shirt">
+        <p>T-shirt (All sizes): R25</p>
+    </div>
+    <div class="image-item">
+        <img src="~/images/Candles.jpg" alt="Candles">
+        <p>Candles: R25</p>
+    </div>
+    <div class="image-item">
+        <img src="~/images/WireCar.jpg" alt="WireCar">
+        <p>Wired Car (Custom Flag): R25</p>
+    </div>
+</div>
