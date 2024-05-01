@@ -13,7 +13,19 @@ namespace KhumaloCraftEmporium.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int userID)
+        {
+            // Retrieve all products from the database
+            List<productTable> products = productTable.GetAllProducts();
+
+            // Pass products and userID to the view
+            ViewData["Products"] = products;
+            ViewData["UserID"] = userID;
+
+            return View();
+        }
+
+        public IActionResult Privacy()
         {
             return View();
         }
@@ -27,11 +39,15 @@ namespace KhumaloCraftEmporium.Controllers
         {
             return View();
         }
-
+        public IActionResult Login()
+        {
+            return View();
+        }
         public IActionResult ContactUs()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

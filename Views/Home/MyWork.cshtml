@@ -1,7 +1,7 @@
-﻿@{
-    ViewData["Title"] = "My Work";
+﻿@model KhumaloCraftEmporium.Models.productTable
+@{
+    ViewData["Title"] = "MyWork";
 }
-
 <h1>@ViewData["Title"]</h1>
 <!-- -- tutorialspoint, 2024. CSS - Text. [Online] Available at: https://www.tutorialspoint.com/css/css_text.htm [Accessed 25 March 2024] -- -->
 <style>
@@ -75,3 +75,14 @@
         <p>Pants: R100</p>
     </div>
 </div>
+
+<body>
+    <form action="/Product/MyWork" method="post" align ="center">
+        <p>Insert new products</p>
+        <input type="text" name="Name" placeholder="Name" required>
+        <input type="text" name="Price" placeholder="Price" required>
+        <input type="text" name="Category" placeholder="Category" required>
+        <input type="text" name="Availability" placeholder="Availability" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>

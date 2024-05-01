@@ -1,20 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model int
+@{
+    ViewData["Title"] = "Home Page"; 
+    var userID = ViewData["userID"];
+    var products = ViewData["Products"] as List<KhumaloCraftEmporium.Models.productTable>;
 }
 <!-- -- enhanced with Claude Ai -- -->
  <!-- -- w3schools, 2024. CSS background-image Property. [Online] Available at:https://www.w3schools.com/cssref/pr_background-image.php [Accessed 31 March 2024]-- -->
 <style>
-    body {
-        background-image: url('/images/Background1.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        margin: 0;
-        height: 100vh;
-        position: relative;
-    }
-
     h1 {
         font-family: 'Montserrat', sans-serif;
         font-size: 4rem;
@@ -26,12 +18,57 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 100%;
+    }
+
+    body {
+        background-image: url('/images/Background1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        height: 100vh;
+        position: relative;
     }
 </style>
 
-<h1>WELCOME</br>TO</br> KHUMALOCRAFT EMPORIUM</h1>
+<h1>WELCOME<br>TO<br> KHUMALOCRAFT EMPORIUM</h1>
+
+@if (userID != null)
+{
+    <p>User ID: userID</p>
+}
+
+<h2>All Products</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th><a href="c:\\users\\matth\\source\\repos\\khumalocraftemporium\\views\\home\\index.cshtml">c:\\users\\matth\\source\\repos\\khumalocraftemporium\\views\\home\\index.cshtml</a></th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Category</td>
+                <td>@product.Availability</td>
+                <td>
+                    <form asp-controller="Transaction" asp-action="PlaceOrder" method="post">
+                        <input type="hidden" name="userID" value="userID" />
+                        <input type="hidden" name="productID" value="@product.ProductID" />
+                        <button type="submit">Place Order</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

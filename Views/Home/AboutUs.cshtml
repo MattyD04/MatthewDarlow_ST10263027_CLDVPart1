@@ -44,11 +44,17 @@
 </style>
 
 <h1>@ViewData["Title"]</h1>
-<p>We are KhumaloCraft Emporium. We aim to connect artisans with customers from all over the world in order to bring the best possible products to them!</p>
-
+<p>We are KhumaloCraft Emporium. We aim to connect artisans with customers from all over the world in order to bring the best possible products to them. </br>Please sign up below to start shopping!</p>
+<form action="/User/About" method="post" align ="center">
+    <input type="text" name="Name" placeholder="Name" required>
+    <input type="text" name="Surname" placeholder="Surname" required>
+    <input type="text" name="Email" placeholder="example@gmail.com" required>
+    <button type="submit">Submit</button>
+</form>
 <div class="image-container">
     <img class="TShirt" src="~/images/Tshirt.jpg" alt="T-Shirt" />
     <img class="WireCar" src="~/images/WireCar.jpg" alt="WireCar" />
     <img class="Candles" src="~/images/Candles.jpg" alt="Candles" />
 </div>
 <p>The above images are also for sale, please check out the My Work page for more info!</p>
+
