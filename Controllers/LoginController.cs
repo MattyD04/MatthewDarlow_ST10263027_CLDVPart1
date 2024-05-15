@@ -20,7 +20,7 @@ namespace KhumaloCraftEmporium.Controllers
             int userID = loginModel.SelectUser(email, name);
             if (userID != -1)
             {
-             
+                HttpContext.Session.SetInt32("UserID", userID);
                 return RedirectToAction("Index", "Home", new { userID = userID });
             }
             else
